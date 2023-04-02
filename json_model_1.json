@@ -1,0 +1,80 @@
+{
+  "model": [
+    {
+      "name": "Conv2d",
+      "params": {
+        "in_channels": 1,
+        "out_channels": 32,
+        "kernel_size": 3,
+        "stride": 1
+      }
+    },
+
+    {
+      "name": "relu",
+      "params": {}
+    },
+    {
+      "name": "Conv2d",
+      "params": {
+        "in_channels": 32,
+        "out_channels": 64,
+        "kernel_size": 3,
+        "stride": 1
+      }
+    },
+
+    {
+      "name": "relu",
+      "params": {}
+    },
+    {
+      "name": "Max Pool 2D",
+      "params": {
+        "kernel_size": 2
+      }
+    },
+
+    {
+      "name": "Dropout",
+      "params": {
+        "p": 0.25
+      }
+    },
+    {
+      "name": "Flatten",
+      "params": {
+        "start_dim": 1
+      }
+    },
+    {
+      "name": "Linear",
+      "params": {
+        "in_features": 9216,
+        "out_features": 128
+      }
+    },
+    {
+      "name": "relu",
+      "params": {}
+    },
+    {
+      "name": "Dropout",
+      "params": {
+        "p": 0.5
+      }
+    },
+    
+    {
+      "name": "Linear",
+      "params": {
+        "in_features": 128,
+        "out_features": 10
+      }
+    },
+    {
+      "name": "Log Softmax",
+      "params": {}
+    }
+  ]
+}
